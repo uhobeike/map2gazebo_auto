@@ -3,11 +3,15 @@ project(map2gazebo_auto)
 
 find_package(ament_cmake_auto REQUIRED)
 
-ament_auto_package(
-INSTALL_TO_PATH
+install(PROGRAMS
   scripts/map2gazebo_docker.sh
   scripts/output_check.sh
-INSTALL_TO_SHARE
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+ament_auto_package(
+  INSTALL_TO_SHARE
   config
   launch
+  scripts
 )

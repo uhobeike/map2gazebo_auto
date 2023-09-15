@@ -3,8 +3,6 @@
   <arg name="verbose"     default="true"/>
   <arg name="gui"         default="true"/>
 
-  <set_env name="GAZEBO_MODEL_PATH" value="$(find-pkg-share map2gazebo_auto)/config/models/:$(env GAZEBO_MODEL_PATH)"/>
-
   <include file="$(find-pkg-share gazebo_ros)/launch/gzserver.launch.py">
     <arg name="world" value="$(find-pkg-share map2gazebo_auto)/config/world/$(var world_name).world"/>
   </include>
